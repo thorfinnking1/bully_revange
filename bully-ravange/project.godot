@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="bully ravange"
-run/main_scene="uid://cdm84580s1vuj"
+run/main_scene="uid://dxdr3rqu765tt"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Al="*res://scripts/al.gd"
 
 [display]
 
