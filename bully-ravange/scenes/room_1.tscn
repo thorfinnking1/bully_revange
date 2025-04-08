@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=4 uid="uid://dxdr3rqu765tt"]
+
+[ext_resource type="Texture2D" uid="uid://hwpxb5jr8gx0" path="res://icon.svg" id="1_vu5en"]
+[ext_resource type="PackedScene" uid="uid://din2v78xxcvyh" path="res://scenes/plr.tscn" id="2_8oql1"]
+[ext_resource type="PackedScene" uid="uid://bn78q4t5qlptl" path="res://scenes/door.tscn" id="3_8oql1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vu5en"]
+texture = ExtResource("1_vu5en")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_yutty"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 7
+physics_layer_0/collision_mask = 7
+sources/0 = SubResource("TileSetAtlasSource_vu5en")
+
+[node name="room1" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+scale = Vector2(0.5, 0.5)
+tile_map_data = PackedByteArray("AAD/////AAAAAAAAAAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAAAAAAAAAD//wUAAAAAAAAAAAD//wYAAAAAAAAAAAD//wcAAAAAAAAAAAD//wgAAAAAAAAAAAD//wkAAAAAAAAAAAD//woAAAAAAAAAAAAAAP//AAAAAAAAAAAAAAoAAAAAAAAAAAABAP//AAAAAAAAAAABAAoAAAAAAAAAAAACAP//AAAAAAAAAAACAAoAAAAAAAAAAAADAP//AAAAAAAAAAADAAoAAAAAAAAAAAAEAP//AAAAAAAAAAAEAAoAAAAAAAAAAAAFAP//AAAAAAAAAAAFAAoAAAAAAAAAAAAGAP//AAAAAAAAAAAGAAoAAAAAAAAAAAAHAP//AAAAAAAAAAAHAAoAAAAAAAAAAAAIAP//AAAAAAAAAAAIAAoAAAAAAAAAAAAJAP//AAAAAAAAAAAJAAoAAAAAAAAAAAAKAP//AAAAAAAAAAAKAAoAAAAAAAAAAAALAP//AAAAAAAAAAALAAoAAAAAAAAAAAAMAP//AAAAAAAAAAAMAAoAAAAAAAAAAAANAP//AAAAAAAAAAANAAoAAAAAAAAAAAAOAP//AAAAAAAAAAAOAAoAAAAAAAAAAAAPAP//AAAAAAAAAAAPAAoAAAAAAAAAAAAQAP//AAAAAAAAAAAQAAoAAAAAAAAAAAARAP//AAAAAAAAAAARAAoAAAAAAAAAAAASAP//AAAAAAAAAAASAAAAAAAAAAAAAAASAAEAAAAAAAAAAAASAAIAAAAAAAAAAAASAAMAAAAAAAAAAAASAAQAAAAAAAAAAAASAAUAAAAAAAAAAAASAAYAAAAAAAAAAAASAAcAAAAAAAAAAAASAAgAAAAAAAAAAAASAAkAAAAAAAAAAAASAAoAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_yutty")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_8oql1")]
+position = Vector2(514, 327)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+limit_left = -100
+limit_top = -100
+limit_right = 1250
+limit_bottom = 700
+
+[node name="rom2" parent="." instance=ExtResource("3_8oql1")]
+position = Vector2(1144, 328)
+pathtooroom = "uid://5rc2xqqtp7rt"
+
+[node name="rom3" parent="." instance=ExtResource("3_8oql1")]
+position = Vector2(319, 5)
+rotation = 1.5708
+pathtooroom = "uid://yvepqk1agbb6"
