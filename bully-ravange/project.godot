@@ -29,6 +29,10 @@ folder_colors={
 "res://voice acting/": "teal"
 }
 
+[global_group]
+
+bully=""
+
 [input]
 
 ui_left={

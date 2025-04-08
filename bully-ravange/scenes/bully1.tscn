@@ -7,7 +7,8 @@
 radius = 27.5
 height = 126.0
 
-[node name="bully1" type="CharacterBody2D"]
+[node name="bully1" type="CharacterBody2D" groups=["bully"]]
+motion_mode = 1
 script = ExtResource("1_bqcic")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -140,3 +141,8 @@ rest = Transform2D(-0.144854, -0.989453, 0.989453, -0.144854, 1, -44)
 auto_calculate_length_and_angle = false
 length = 16.0
 bone_angle = 0.0
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
+radius = 27.5
+debug_enabled = true

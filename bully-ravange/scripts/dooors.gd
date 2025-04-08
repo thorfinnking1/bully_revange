@@ -13,3 +13,5 @@ func _on_body_entered(body: Node2D) -> void:
 		cameraout.enabled=false
 		camera.enabled = true
 		body.global_position = door.marker.global_position
+	elif body.is_in_group("bully"):
+		body.global_position = door.marker.global_position
