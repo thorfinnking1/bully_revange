@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://yvepqk1agbb6"]
+[gd_scene load_steps=6 format=4 uid="uid://yvepqk1agbb6"]
 
 [ext_resource type="Texture2D" uid="uid://hwpxb5jr8gx0" path="res://icon.svg" id="1_pmnxm"]
 [ext_resource type="PackedScene" uid="uid://din2v78xxcvyh" path="res://scenes/plr.tscn" id="2_rjoje"]
+[ext_resource type="PackedScene" uid="uid://bn78q4t5qlptl" path="res://scenes/door.tscn" id="3_rjoje"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bg4i0"]
 texture = ExtResource("1_pmnxm")
@@ -15,7 +16,7 @@ physics_layer_0/collision_layer = 7
 physics_layer_0/collision_mask = 7
 sources/0 = SubResource("TileSetAtlasSource_bg4i0")
 
-[node name="room3" type="Node2D"]
+[node name="room_3" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 scale = Vector2(0.5, 0.5)
@@ -30,3 +31,15 @@ limit_left = -100
 limit_top = -200
 limit_right = 1900
 limit_bottom = 1100
+
+[node name="room_2" parent="." node_paths=PackedStringArray("plr") instance=ExtResource("3_rjoje")]
+position = Vector2(1788, 364)
+rotation = 3.14159
+pathtooroom = "uid://5rc2xqqtp7rt"
+plr = NodePath("../CharacterBody2D")
+
+[node name="room_1" parent="." node_paths=PackedStringArray("plr") instance=ExtResource("3_rjoje")]
+position = Vector2(150, 632)
+rotation = -1.5708
+pathtooroom = "uid://dxdr3rqu765tt"
+plr = NodePath("../CharacterBody2D")
