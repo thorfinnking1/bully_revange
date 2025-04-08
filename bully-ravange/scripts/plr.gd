@@ -8,6 +8,10 @@ extends CharacterBody2D
 @onready var skel = $Skeleton2D
 @onready var timer : Timer = $Timer
 
+@onready var limbs = [$d/blood,$c/Polygon2D8,$c/Polygon2D4,$c/Polygon2D9,$c/Polygon2D10,$c/Polygon2D11,$c/Polygon2D12,$b/Polygon2D7,$s/Polygon2D7]
+
+var state = "normal"
+
 # In your player or main node script:
 var idle = false
 const SPEED =  200.0
@@ -66,7 +70,14 @@ func _physics_process(_delta: float) -> void:
 		ani.play("idle")
 		idle = true
 
-func _process(delta):
+func _process(_delta):
+	if state=="killer":
+		for i in limbs:
+			i.visible = true
+	else:
+		for i in limbs:
+			i.visible = false
+	
 	if ani.is_playing() and idle:
 		timer.start(1)
 
@@ -81,3 +92,9 @@ func _ready():
 			print(100)
 		3:
 			print(200)
+
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("j"):
+		state="normal"
+	elif Input.is_action_just_pressed("k"):
+		state="killer"
