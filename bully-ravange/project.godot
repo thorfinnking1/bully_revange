@@ -15,10 +15,6 @@ run/main_scene="uid://dxdr3rqu765tt"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-Al="*res://scripts/al.gd"
-
 [display]
 
 window/stretch/mode="viewport"
