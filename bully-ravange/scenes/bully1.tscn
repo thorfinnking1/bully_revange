@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cyfujek7ujrcg" path="res://sprites/bully1.png" id="1_cg8ng"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bqcic"]
-radius = 27.5
-height = 126.0
+radius = 24.0
+height = 86.0
 
 [sub_resource type="Animation" id="Animation_qsr7e"]
 length = 0.001
@@ -643,6 +643,7 @@ motion_mode = 1
 script = ExtResource("1_bqcic")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 19)
 shape = SubResource("CapsuleShape2D_bqcic")
 
 [node name="polygons" type="Node2D" parent="."]
@@ -729,6 +730,7 @@ bone_angle = 0.0
 [node name="rightleg" type="Bone2D" parent="Skeleton2D/torso"]
 position = Vector2(-9, 9)
 rotation = -1.54865
+scale = Vector2(1, 1)
 rest = Transform2D(0.0221417, -0.999755, 0.999755, 0.0221417, -9, 10)
 
 [node name="rightfoot" type="Bone2D" parent="Skeleton2D/torso/rightleg"]
@@ -743,6 +745,7 @@ bone_angle = 0.0
 [node name="leftleg" type="Bone2D" parent="Skeleton2D/torso"]
 position = Vector2(12, 10)
 rotation = -1.54865
+scale = Vector2(1, 1)
 rest = Transform2D(0.0221417, -0.999755, 0.999755, 0.0221417, 10, 10)
 
 [node name="leftfoot" type="Bone2D" parent="Skeleton2D/torso/leftleg"]

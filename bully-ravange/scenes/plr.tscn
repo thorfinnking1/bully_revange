@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://ccvbfolbje3gn" path="res://sprites/simina.png" id="5_qsr7e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fmeju"]
-radius = 27.5
-height = 126.0
+radius = 24.0
+height = 86.0
 
 [sub_resource type="Animation" id="Animation_8phke"]
 resource_name = "eye twitch"
@@ -804,6 +804,7 @@ motion_mode = 1
 script = ExtResource("1_cjvkk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 21)
 shape = SubResource("CapsuleShape2D_fmeju")
 
 [node name="d" type="Node2D" parent="."]
@@ -1371,7 +1372,7 @@ rest = Transform2D(1, 0, 0, 1, 0, 0)
 [node name="rightarm" type="Bone2D" parent="Skeleton2D/torso"]
 position = Vector2(-21, -26)
 rotation = -1.38592
-scale = Vector2(0.999999, 0.999999)
+scale = Vector2(0.999998, 0.999998)
 rest = Transform2D(1, 0, 0, 1, -20, -34)
 
 [node name="righthand" type="Bone2D" parent="Skeleton2D/torso/rightarm"]
@@ -1431,7 +1432,7 @@ bone_angle = 0.0
 [node name="head" type="Bone2D" parent="Skeleton2D/torso"]
 position = Vector2(2, -50)
 rotation = -1.71616
-scale = Vector2(0.999999, 0.999999)
+scale = Vector2(0.999998, 0.999998)
 rest = Transform2D(-0.144854, -0.989453, 0.989453, -0.144854, -2, -52)
 auto_calculate_length_and_angle = false
 length = 16.0
