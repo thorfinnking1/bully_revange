@@ -800,6 +800,7 @@ _data = {
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["plr"]]
+motion_mode = 1
 script = ExtResource("1_cjvkk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
