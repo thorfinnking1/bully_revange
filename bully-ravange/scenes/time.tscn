@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfmir685xv71v"]
+
+[ext_resource type="Script" uid="uid://dwdb2d5a6v505" path="res://scripts/timerr.gd" id="1_hxfg6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gt3cs"]
+font_size = 34
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hxfg6")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -160.0
+offset_top = 4.0
+offset_right = -73.0
+offset_bottom = 51.0
+grow_horizontal = 0
+text = "08:00"
+label_settings = SubResource("LabelSettings_gt3cs")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -236.0
+offset_top = 49.0
+offset_right = 1.0
+offset_bottom = 96.0
+grow_horizontal = 0
+text = "Class a"
+label_settings = SubResource("LabelSettings_gt3cs")
+horizontal_alignment = 1
+vertical_alignment = 1
