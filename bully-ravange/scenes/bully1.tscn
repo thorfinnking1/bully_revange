@@ -717,6 +717,7 @@ rest = Transform2D(1, 0, 0, 1, 0, 0)
 [node name="rightarm" type="Bone2D" parent="Skeleton2D/torso"]
 position = Vector2(-21, -26)
 rotation = -1.38592
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(1, 0, 0, 1, -15, -30)
 
 [node name="righthand" type="Bone2D" parent="Skeleton2D/torso/rightarm"]
@@ -730,13 +731,13 @@ bone_angle = 0.0
 [node name="rightleg" type="Bone2D" parent="Skeleton2D/torso"]
 position = Vector2(-9, 9)
 rotation = -1.54865
-scale = Vector2(1, 1)
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(0.0221417, -0.999755, 0.999755, 0.0221417, -9, 10)
 
 [node name="rightfoot" type="Bone2D" parent="Skeleton2D/torso/rightleg"]
 position = Vector2(-22, 0)
 rotation = 3.05228
-scale = Vector2(1, 1)
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(-0.996014, 0.0891964, -0.0891964, -0.996014, -22, 0)
 auto_calculate_length_and_angle = false
 length = 16.0
@@ -745,13 +746,13 @@ bone_angle = 0.0
 [node name="leftleg" type="Bone2D" parent="Skeleton2D/torso"]
 position = Vector2(12, 10)
 rotation = -1.54865
-scale = Vector2(1, 1)
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(0.0221417, -0.999755, 0.999755, 0.0221417, 10, 10)
 
 [node name="leftfoot" type="Bone2D" parent="Skeleton2D/torso/leftleg"]
 position = Vector2(-22, 0)
 rotation = 3.05228
-scale = Vector2(1, 1)
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(-0.996014, 0.0891964, -0.0891964, -0.996014, -22, 0)
 auto_calculate_length_and_angle = false
 length = 16.0
@@ -760,7 +761,7 @@ bone_angle = 0.0
 [node name="leftarm" type="Bone2D" parent="Skeleton2D/torso"]
 position = Vector2(16, -35)
 rotation = 4.48492
-scale = Vector2(1, 1)
+scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(-0.999999, 0.00137368, -0.00137368, -0.999999, 15, -31)
 
 [node name="lefthand" type="Bone2D" parent="Skeleton2D/torso/leftarm"]
@@ -774,18 +775,23 @@ bone_angle = 0.0
 [node name="head" type="Bone2D" parent="Skeleton2D/torso"]
 position = Vector2(2, -50)
 rotation = -1.71616
-scale = Vector2(0.999999, 0.999999)
+scale = Vector2(0.999997, 0.999997)
 rest = Transform2D(-0.144854, -0.989453, 0.989453, -0.144854, 1, -44)
 auto_calculate_length_and_angle = false
 length = 16.0
 bone_angle = 0.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+simplify_path = true
 avoidance_enabled = true
 radius = 126.0
+max_speed = 200.0
 debug_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_8phke")
 }
+
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
