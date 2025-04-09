@@ -9,11 +9,16 @@ extends CharacterBody2D
 @onready var timer : Timer = $Timer
 
 @onready var limbs = [$d/blood,$c/Polygon2D8,$c/Polygon2D4,$c/Polygon2D9,$c/Polygon2D10,$c/Polygon2D11,$c/Polygon2D12,$b/Polygon2D7,$s/Polygon2D7]
-
+@onready var blood = $d/blood
+@onready var blood1 =$c/Polygon2D8
+@onready var blood2 =$b/Polygon2D7
+@onready var blood3 =$s/Polygon2D
 var state = "normal"
 
 # In your player or main node script:
 var idle = false
+var waiting = false
+var playing_idle_variation = false
 const SPEED =  200.0
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("dani"):
@@ -67,7 +72,8 @@ func _physics_process(_delta: float) -> void:
 		idle = false
 		ani.play("walking")  # te miști în sus sau jos, nu flipăm
 	else:
-		ani.play("idle")
+		if not playing_idle_variation:
+			ani.play("idle")
 		idle = true
 
 func _process(_delta):
@@ -77,21 +83,46 @@ func _process(_delta):
 	else:
 		for i in limbs:
 			i.visible = false
-	
-	if ani.is_playing() and idle:
-		timer.start(1)
+	# dacă e idle și nu așteptăm deja, pornește procesul de random
+	if idle and not waiting:
+		waiting = true
+		start_random_action()
+
+func start_random_action() -> void:
+	var time = randi_range(60,120)
+	timer.start(5)
+	await timer.timeout
+	if idle:
+		randomize()
+		var n = randi_range(1, 1)
+		match n:
+			1:
+				playing_idle_variation =true
+				print("1")
+				if d.visible== true:
+					ani.play("idle_ani_1")
+				elif c.visible== true:
+					ani.play("idle_ani_1")
+					blood1.visible = true
+				elif b.visible== true:
+					ani.play("bea_ani_1")
+					blood3.visible = true
+				elif s.visible== true:
+					ani.play("idle_ani_1")
+					blood3.visible = true
+				await ani.animation_finished
+				playing_idle_variation = false
+				ani.play("idle")
+			2:
+				print(100)
+			3:
+				print(200)
+	else:
+		ani.play("idle")
+	waiting = false
 
 func _ready():
-	await timer.timeout
-	randomize()
-	var n  =randi_range(1,3)
-	match n:
-		1:
-			print(0)
-		2:
-			print(100)
-		3:
-			print(200)
+	pass
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("j"):
