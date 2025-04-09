@@ -639,6 +639,7 @@ _data = {
 }
 
 [node name="bully1" type="CharacterBody2D" groups=["bully"]]
+collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_bqcic")
 

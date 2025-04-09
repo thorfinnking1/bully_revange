@@ -24,11 +24,14 @@ func choosepoint(poins):
 
 func _on_navigation_agent_2d_velocity_computed(safe_velocity: Vector2) -> void:
 	velocity = safe_velocity
-	if velocity:
-		ani.play("walking")
-		if velocity.x < 0:
-			$Skeleton2D.scale.x = -1
-			$polygons.scale.x = -1.141
-		else:
-			$Skeleton2D.scale.x = 1
-			$polygons.scale.x = 1.141
+	if targetpos:
+		if velocity:
+			ani.play("walking")
+			if velocity.x < 0:
+				$Skeleton2D.scale.x = -1
+				$polygons.scale.x = -1.141
+			else:
+				$Skeleton2D.scale.x = 1
+				$polygons.scale.x = 1.141
+	else:
+		ani.play("idle")
