@@ -47,9 +47,6 @@ sources/0 = SubResource("TileSetAtlasSource_8oql1")
 [node name="room_1" type="Node2D"]
 y_sort_enabled = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(760, -243)
-
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
 scale = Vector2(0.5, 0.5)
 occluder = SubResource("OccluderPolygon2D_0akh5")
@@ -159,9 +156,6 @@ plr = NodePath("../CharacterBody2D")
 [node name="bully1" parent="." node_paths=PackedStringArray("points") instance=ExtResource("5_0akh5")]
 position = Vector2(760, -243)
 points = NodePath("../points")
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="bully1"]
-remote_path = NodePath("../../Camera2D")
 
 [node name="points" type="Node2D" parent="."]
 
