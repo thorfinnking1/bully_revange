@@ -14,6 +14,7 @@ var state = "normal"
 
 # In your player or main node script:
 var idle = false
+var waiting = false
 const SPEED =  200.0
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("dani"):
@@ -77,21 +78,29 @@ func _process(_delta):
 	else:
 		for i in limbs:
 			i.visible = false
-	
-	if ani.is_playing() and idle:
-		timer.start(1)
+	# dacă e idle și nu așteptăm deja, pornește procesul de random
+	if idle and not waiting:
+		waiting = true
+		start_random_action()
+
+func start_random_action() -> void:
+	timer.start(1)
+	await timer.timeout
+	if idle:
+		randomize()
+		var n = randi_range(1, 3)
+		match n:
+			1:
+				print(0)
+			2:
+				print(100)
+			3:
+				print(200)
+	waiting = false
+
 
 func _ready():
-	await timer.timeout
-	randomize()
-	var n  =randi_range(1,3)
-	match n:
-		1:
-			print(0)
-		2:
-			print(100)
-		3:
-			print(200)
+	pass
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("j"):

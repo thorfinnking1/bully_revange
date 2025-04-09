@@ -10,6 +10,81 @@
 radius = 24.0
 height = 86.0
 
+[sub_resource type="Animation" id="Animation_ijql0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D17:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Polygon2D16:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Polygon2D15:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Polygon2D14:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Polygon2D11:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Polygon2D10:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_8phke"]
 resource_name = "eye twitch"
 loop_mode = 1
@@ -85,81 +160,6 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
-}
-
-[sub_resource type="Animation" id="Animation_ijql0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Polygon2D17:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Polygon2D16:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Polygon2D15:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Polygon2D14:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Polygon2D11:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Polygon2D10:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w4peb"]
@@ -808,6 +808,7 @@ position = Vector2(0, 21)
 shape = SubResource("CapsuleShape2D_fmeju")
 
 [node name="d" type="Node2D" parent="."]
+visible = false
 
 [node name="Polygon2D4" type="Polygon2D" parent="d"]
 position = Vector2(-67, -79)
@@ -878,7 +879,6 @@ uv = PackedVector2Array(670.901, 564.55, 1101.88, 567.013, 1092.03, 961.055, 653
 bones = ["torso", PackedFloat32Array(0, 0, 0, 0), "torso/rightarm", PackedFloat32Array(0, 0, 0, 0), "torso/rightarm/righthand", PackedFloat32Array(0, 0, 0, 0), "torso/rightleg", PackedFloat32Array(0, 0, 0, 0), "torso/rightleg/rightfoot", PackedFloat32Array(0, 0, 0, 0), "torso/leftleg", PackedFloat32Array(0, 0, 0, 0), "torso/leftleg/leftfoot", PackedFloat32Array(0, 0, 0, 0), "torso/leftarm", PackedFloat32Array(0, 0, 0, 0), "torso/leftarm/lefthand", PackedFloat32Array(0, 0, 0, 0), "torso/head", PackedFloat32Array(1, 1, 1, 1)]
 
 [node name="c" type="Node2D" parent="."]
-visible = false
 position = Vector2(-2, -15)
 scale = Vector2(1.14518, 1.18547)
 
@@ -951,6 +951,17 @@ polygon = PackedVector2Array(1734.15, 866.565, 2018.47, 866.565, 2023.46, 1127.6
 uv = PackedVector2Array(1734.15, 866.565, 2018.47, 866.565, 2023.46, 1127.61, 1727.5, 1104.33)
 bones = ["torso", PackedFloat32Array(0, 0, 0, 0), "torso/rightarm", PackedFloat32Array(0, 0, 0, 0), "torso/rightarm/righthand", PackedFloat32Array(0, 0, 0, 0), "torso/rightleg", PackedFloat32Array(0, 0, 0, 0), "torso/rightleg/rightfoot", PackedFloat32Array(0, 0, 0, 0), "torso/leftleg", PackedFloat32Array(0, 0, 0, 0), "torso/leftleg/leftfoot", PackedFloat32Array(0, 0, 0, 0), "torso/leftarm", PackedFloat32Array(0, 0, 0, 0), "torso/leftarm/lefthand", PackedFloat32Array(1, 1, 1, 1), "torso/head", PackedFloat32Array(0, 0, 0, 0)]
 
+[node name="Polygon2D2" type="Polygon2D" parent="c"]
+position = Vector2(-68.9848, -4.21774)
+rotation = -1.577
+scale = Vector2(0.0471705, 0.0409538)
+offset = Vector2(-2000, -500)
+texture = ExtResource("3_seiu4")
+skeleton = NodePath("../../Skeleton2D")
+polygon = PackedVector2Array(2026.67, 2049.49, 2087.31, 1643.18, 2087.31, 1558.29, 2069.12, 1455.19, 2007.2, 859.159, 2366.75, 859.159, 2440.13, 1402.15, 2388.76, 1526.89, 2440.13, 1702.99, 2445.14, 2062.45)
+uv = PackedVector2Array(2026.67, 2049.49, 2087.31, 1643.18, 2087.31, 1558.29, 2069.12, 1455.19, 2007.2, 859.159, 2366.75, 859.159, 2440.13, 1402.15, 2388.76, 1526.89, 2440.13, 1702.99, 2445.14, 2062.45)
+bones = ["torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/rightarm", PackedFloat32Array(1, 1, 1, 1, 0, 0, 0, 0, 1, 1), "torso/rightarm/righthand", PackedFloat32Array(0, 0, 0, 1, 1, 1, 1, 1, 1, 0), "torso/rightleg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/rightleg/rightfoot", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/leftleg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/leftleg/leftfoot", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/leftarm", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/leftarm/lefthand", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
 [node name="Polygon2D" type="Polygon2D" parent="c"]
 position = Vector2(-70, -113)
 scale = Vector2(0.05, 0.05)
@@ -969,17 +980,6 @@ skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(993.076, 1488.37, 1620.37, 1504.06, 1706.62, 406.292, 938.188, 433.737)
 uv = PackedVector2Array(993.076, 1488.37, 1620.37, 1504.06, 1706.62, 406.292, 938.188, 433.737)
 bones = ["torso", PackedFloat32Array(1, 1, 1, 1), "torso/rightarm", PackedFloat32Array(0, 0, 0, 0), "torso/rightarm/righthand", PackedFloat32Array(0, 0, 0, 0), "torso/rightleg", PackedFloat32Array(0, 0, 0, 0), "torso/rightleg/rightfoot", PackedFloat32Array(0, 0, 0, 0), "torso/leftleg", PackedFloat32Array(0, 0, 0, 0), "torso/leftleg/leftfoot", PackedFloat32Array(0, 0, 0, 0), "torso/leftarm", PackedFloat32Array(0, 0, 0, 0), "torso/leftarm/lefthand", PackedFloat32Array(0, 0, 0, 0), "torso/head", PackedFloat32Array(0, 0, 0, 0)]
-
-[node name="Polygon2D2" type="Polygon2D" parent="c"]
-position = Vector2(-73.3509, -5.90483)
-rotation = -1.577
-scale = Vector2(0.0471705, 0.0409538)
-offset = Vector2(-2000, -500)
-texture = ExtResource("3_seiu4")
-skeleton = NodePath("../../Skeleton2D")
-polygon = PackedVector2Array(2026.67, 2049.49, 2087.31, 1643.18, 2087.31, 1558.29, 2069.12, 1455.19, 2007.2, 859.159, 2366.75, 859.159, 2440.13, 1402.15, 2388.76, 1526.89, 2440.13, 1702.99, 2445.14, 2062.45)
-uv = PackedVector2Array(2026.67, 2049.49, 2087.31, 1643.18, 2087.31, 1558.29, 2069.12, 1455.19, 2007.2, 859.159, 2366.75, 859.159, 2440.13, 1402.15, 2388.76, 1526.89, 2440.13, 1702.99, 2445.14, 2062.45)
-bones = ["torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/rightarm", PackedFloat32Array(1, 1, 1, 1, 0, 0, 0, 0, 1, 1), "torso/rightarm/righthand", PackedFloat32Array(0, 0, 0, 1, 1, 1, 1, 1, 1, 0), "torso/rightleg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/rightleg/rightfoot", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/leftleg", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/leftleg/leftfoot", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/leftarm", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/leftarm/lefthand", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "torso/head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="Polygon2D10" type="Polygon2D" parent="c"]
 visible = false
@@ -1378,7 +1378,6 @@ rest = Transform2D(1, 0, 0, 1, -20, -34)
 [node name="righthand" type="Bone2D" parent="Skeleton2D/torso/rightarm"]
 position = Vector2(-22, 0)
 rotation = 3.05228
-scale = Vector2(1, 1)
 rest = Transform2D(-0.996014, 0.0891964, -0.0891964, -0.996014, -22, 0)
 auto_calculate_length_and_angle = false
 length = 16.0
@@ -1387,13 +1386,11 @@ bone_angle = 0.0
 [node name="rightleg" type="Bone2D" parent="Skeleton2D/torso"]
 position = Vector2(-9, 9)
 rotation = -1.54865
-scale = Vector2(1, 1)
 rest = Transform2D(0.0221417, -0.999755, 0.999755, 0.0221417, -9, 9)
 
 [node name="rightfoot" type="Bone2D" parent="Skeleton2D/torso/rightleg"]
 position = Vector2(-22, 0)
 rotation = 3.05228
-scale = Vector2(1, 1)
 rest = Transform2D(-0.996014, 0.0891964, -0.0891964, -0.996014, -22, 0)
 auto_calculate_length_and_angle = false
 length = 16.0
@@ -1402,13 +1399,11 @@ bone_angle = 0.0
 [node name="leftleg" type="Bone2D" parent="Skeleton2D/torso"]
 position = Vector2(12, 10)
 rotation = -1.54865
-scale = Vector2(1, 1)
 rest = Transform2D(0.0221417, -0.999755, 0.999755, 0.0221417, 12, 10)
 
 [node name="leftfoot" type="Bone2D" parent="Skeleton2D/torso/leftleg"]
 position = Vector2(-22, 0)
 rotation = 3.05228
-scale = Vector2(1, 1)
 rest = Transform2D(-0.996014, 0.0891964, -0.0891964, -0.996014, -22, 0)
 auto_calculate_length_and_angle = false
 length = 16.0
@@ -1417,13 +1412,11 @@ bone_angle = 0.0
 [node name="leftarm" type="Bone2D" parent="Skeleton2D/torso"]
 position = Vector2(16, -35)
 rotation = 4.48492
-scale = Vector2(1, 1)
 rest = Transform2D(-0.999999, 0.00137368, -0.00137368, -0.999999, 16, -35)
 
 [node name="lefthand" type="Bone2D" parent="Skeleton2D/torso/leftarm"]
 position = Vector2(-22, 0)
 rotation = 3.05228
-scale = Vector2(1, 1)
 rest = Transform2D(-0.996014, 0.0891964, -0.0891964, -0.996014, -22, 0)
 auto_calculate_length_and_angle = false
 length = 16.0
@@ -1432,7 +1425,7 @@ bone_angle = 0.0
 [node name="head" type="Bone2D" parent="Skeleton2D/torso"]
 position = Vector2(2, -50)
 rotation = -1.71616
-scale = Vector2(0.999998, 0.999998)
+scale = Vector2(0.999997, 0.999997)
 rest = Transform2D(-0.144854, -0.989453, 0.989453, -0.144854, -2, -52)
 auto_calculate_length_and_angle = false
 length = 16.0
