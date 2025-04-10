@@ -82,6 +82,7 @@ func _physics_process(_delta: float) -> void:
 		ani.stop()
 		playing_idle_variation = false
 		waiting = false
+		
 
 func _process(_delta):
 	if state=="killer":
