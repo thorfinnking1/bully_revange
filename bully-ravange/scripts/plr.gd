@@ -19,7 +19,7 @@ var state = "normal"
 var idle = false
 var waiting = false
 var playing_idle_variation = false
-const SPEED =  200.0
+var SPEED =  200.0
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("dani"):
 		d.visible= true
@@ -53,7 +53,8 @@ func _physics_process(_delta: float) -> void:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 	move_and_slide()
 	if direction == 1:
-		ani.play("walking")
+		if not playing_idle_variation:
+			ani.play("walking")
 		d.scale.x = 1
 		c.scale.x = 1
 		b.scale.x = 1
@@ -61,7 +62,8 @@ func _physics_process(_delta: float) -> void:
 		skel.scale.x = 1
 		idle = false
 	elif direction == -1:
-		ani.play("walking")
+		if not playing_idle_variation:
+			ani.play("walking")
 		d.scale.x = -1
 		c.scale.x = -1
 		b.scale.x = -1
@@ -70,7 +72,8 @@ func _physics_process(_delta: float) -> void:
 		idle = false
 	elif up_down == 1 or up_down == -1:
 		idle = false
-		ani.play("walking")  # te miști în sus sau jos, nu flipăm
+		if not playing_idle_variation:
+			ani.play("walking")  # te miști în sus sau jos, nu flipăm
 	else:
 		if not playing_idle_variation:
 			ani.play("idle")
@@ -101,14 +104,18 @@ func start_random_action() -> void:
 				print("1")
 				if d.visible== true:
 					ani.play("idle_ani_1")
+					SPEED = 0
 				elif c.visible== true:
 					ani.play("idle_ani_1")
+					SPEED = 0
 					blood1.visible = true
 				elif b.visible== true:
 					ani.play("bea_ani_1")
+					SPEED = 0
 					blood3.visible = true
 				elif s.visible== true:
 					ani.play("idle_ani_1")
+					SPEED = 0
 					blood3.visible = true
 				await ani.animation_finished
 				playing_idle_variation = false
@@ -117,8 +124,7 @@ func start_random_action() -> void:
 				print(100)
 			3:
 				print(200)
-	else:
-		ani.play("idle")
+	SPEED = 200
 	waiting = false
 
 func _ready():
