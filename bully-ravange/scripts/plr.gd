@@ -19,7 +19,7 @@ var state = "normal"
 var idle = false
 var waiting = false
 var playing_idle_variation = false
-var SPEED =  200.0
+const SPEED =  200.0
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("dani"):
 		d.visible= true
@@ -78,6 +78,11 @@ func _physics_process(_delta: float) -> void:
 		if not playing_idle_variation:
 			ani.play("idle")
 		idle = true
+	if playing_idle_variation and (direction or up_down):
+		ani.stop()
+		playing_idle_variation = false
+		waiting = false
+		
 
 func _process(_delta):
 	if state=="killer":
@@ -93,7 +98,7 @@ func _process(_delta):
 
 func start_random_action() -> void:
 	var time = randi_range(60,120)
-	timer.start(5)
+	timer.start(time)
 	await timer.timeout
 	if idle:
 		randomize()
@@ -104,18 +109,14 @@ func start_random_action() -> void:
 				print("1")
 				if d.visible== true:
 					ani.play("idle_ani_1")
-					SPEED = 0
 				elif c.visible== true:
 					ani.play("idle_ani_1")
-					SPEED = 0
 					blood1.visible = true
 				elif b.visible== true:
 					ani.play("bea_ani_1")
-					SPEED = 0
 					blood3.visible = true
 				elif s.visible== true:
 					ani.play("idle_ani_1")
-					SPEED = 0
 					blood3.visible = true
 				await ani.animation_finished
 				playing_idle_variation = false
@@ -124,8 +125,8 @@ func start_random_action() -> void:
 				print(100)
 			3:
 				print(200)
-	SPEED = 200
 	waiting = false
+
 
 func _ready():
 	pass
