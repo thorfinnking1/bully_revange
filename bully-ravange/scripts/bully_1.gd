@@ -1,14 +1,20 @@
 extends CharacterBody2D
 
 @export var points:Node2D
+@export var desk:Sprite2D
 
 @onready var ani: AnimationPlayer = $AnimationPlayer
 
 var targetpos
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
 
+var clas = false
+
 func _ready() -> void:
 	choosepoint(points)
+
+func cla(claass):
+	clas=claass
 
 func _physics_process(_delta: float) -> void:
 	var nextp=nav.get_next_path_position()
