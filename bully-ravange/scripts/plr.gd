@@ -9,10 +9,6 @@ extends CharacterBody2D
 @onready var timer : Timer = $Timer
 
 @onready var limbs = [$d/blood,$c/Polygon2D8,$c/Polygon2D4,$c/Polygon2D9,$c/Polygon2D10,$c/Polygon2D11,$c/Polygon2D12,$b/Polygon2D7,$s/Polygon2D7]
-@onready var blood = $d/blood
-@onready var blood1 =$c/Polygon2D8
-@onready var blood2 =$b/Polygon2D7
-@onready var blood3 =$s/Polygon2D
 var state = "normal"
 
 # In your player or main node script:
@@ -56,7 +52,7 @@ func _physics_process(_delta: float) -> void:
 		if not playing_idle_variation:
 			ani.play("walking")
 		d.scale.x = 1
-		c.scale.x = 1
+		c.scale.x = 1.145
 		b.scale.x = 1
 		s.scale.x = 1
 		skel.scale.x = 1
@@ -65,7 +61,7 @@ func _physics_process(_delta: float) -> void:
 		if not playing_idle_variation:
 			ani.play("walking")
 		d.scale.x = -1
-		c.scale.x = -1
+		c.scale.x = -1.145
 		b.scale.x = -1
 		s.scale.x = -1
 		skel.scale.x = -1
@@ -111,13 +107,10 @@ func start_random_action() -> void:
 					ani.play("idle_ani_1")
 				elif c.visible== true:
 					ani.play("idle_ani_1")
-					blood1.visible = true
 				elif b.visible== true:
 					ani.play("bea_ani_1")
-					blood3.visible = true
 				elif s.visible== true:
 					ani.play("idle_ani_1")
-					blood3.visible = true
 				await ani.animation_finished
 				playing_idle_variation = false
 				ani.play("idle")

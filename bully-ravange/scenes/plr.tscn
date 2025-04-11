@@ -1495,7 +1495,7 @@ bones = ["torso", PackedFloat32Array(1, 1, 1, 1), "torso/rightarm", PackedFloat3
 
 [node name="Polygon2D10" type="Polygon2D" parent="c"]
 visible = false
-position = Vector2(-73.3509, -20.2451)
+position = Vector2(-68.9848, -19.4016)
 rotation = -1.577
 scale = Vector2(0.0471705, 0.0409538)
 offset = Vector2(-2000, -500)
