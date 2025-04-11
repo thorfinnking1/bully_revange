@@ -4,6 +4,7 @@ extends Area2D
 @onready var marker: Marker2D = $Marker2D
 
 @export var camera:Camera2D
+
 @export var cameraout:Camera2D
 
 @export var plr:CharacterBody2D
