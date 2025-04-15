@@ -15,7 +15,7 @@ var state = "normal"
 var idle = false
 var waiting = false
 var playing_idle_variation = false
-const SPEED =  200.0
+const SPEED = 400.0
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("dani"):
 		d.visible= true
