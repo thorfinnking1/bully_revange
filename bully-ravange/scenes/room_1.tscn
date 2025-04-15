@@ -734,14 +734,14 @@ cameraout = NodePath("../../CharacterBody2D/third")
 plr = NodePath("../../CharacterBody2D")
 
 [node name="door42" parent="doors" node_paths=PackedStringArray("door", "camera", "cameraout", "plr") instance=ExtResource("3_8oql1")]
-position = Vector2(2058, 607)
+position = Vector2(2058, 833)
 door = NodePath("../door43")
 camera = NodePath("../../CharacterBody2D/third")
 cameraout = NodePath("../../CharacterBody2D/third")
 plr = NodePath("../../CharacterBody2D")
 
 [node name="door43" parent="doors" node_paths=PackedStringArray("door", "camera", "cameraout", "plr") instance=ExtResource("3_8oql1")]
-position = Vector2(1975, 610)
+position = Vector2(1975, 832)
 rotation = -3.14159
 door = NodePath("../door42")
 camera = NodePath("../../CharacterBody2D/third")
