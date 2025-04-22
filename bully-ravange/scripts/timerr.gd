@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 	
 	label.text = "%s:%s" % [str(hours).pad_zeros(2),str(mins).pad_zeros(2)]
 	
-	if hours <= 10 and mins==50:
+	if hours <= 10 and mins <= 50 and hours != 1:
 		stuff.text = "Class " + clas
 	elif hours>=11 and mins>=10:
 		stuff.text = "Class " + clas
